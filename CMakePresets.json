@@ -1,0 +1,38 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "Visual Studio Build Tools 2026 Release - amd64",
+            "description": "Using compilers for Visual Studio 18 2026 (x64 architecture)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "/O1",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_CXX_FLAGS": "/MP",
+                "CMAKE_C_FLAGS": "/MP"
+            }
+        }
+        
+    ],
+    "buildPresets": [
+        {
+            "name": "default-debug",
+            "displayName": "Visual Studio Build Tools 2026 Release - amd64 - Debug",
+            "configurePreset": "default",
+            "configuration": "Debug",
+            "jobs": 0
+        },
+        {
+            "name": "default-release",
+            "displayName": "Visual Studio Build Tools 2026 Release - amd64 - Release",
+            "configurePreset": "default",
+            "configuration": "RelWithDebInfo",
+            "jobs": 0
+        }
+    ]
+}
