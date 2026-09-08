@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.25.0)
 project(pet VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 20)
-add_executable(pet main.cpp headers/Screen.cpp
-  headers/Player.cpp)
+add_executable(pet main.cpp Src/Screen.cpp
+  Src/Player.cpp)
 
 set(FETCHCONTENT_BASE_DIR "${CMAKE_SOURCE_DIR}/ThirdParty" CACHE PATH "")
 include(FetchContent)
